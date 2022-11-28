@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es" class="h-100">
+
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.104.2">
+  <title>Cover Electricidad</title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
+  <link href={% static 'core/css/bootstrap.min.css' %} rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href={% static 'core/css/cover.css' %} rel="stylesheet">
+  <link href={% static 'core/css/custom.css' %} rel="stylesheet">
+  
+</head>
+
+<body class="d-flex h-100 text-center text-bg-dark">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Cover Electricidad</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href={% url 'home' %}>Inicio</a>
+        <a class="nav-link fw-bold py-1 px-0" href={% url 'products' %}>Productos</a>
+        {% if request.user.is_authenticated %}
+          <a class="nav-link fw-bold py-1 px-0" href={% url 'exit' %}>Salir</a>
+        {% else %}
+          <a class="nav-link fw-bold py-1 px-0" href={% url 'login' %}>Ingresar</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  {% if request.user.is_authenticated %}
+    <a class="btn btn-outline-light" href={% url 'exit' %}>Cerrar Sesión</a>
+  {% endif %}
+
+  <footer class="mt-auto text-white-50">
+    <p>Código para Principiantes <a href="https://www.youtube.com/channel/UCojloc55DB6zD6zB7-kTWWQ" class="text-white">YouTube</a>, por <a href="https://twitter.com/ominaca" class="text-white">@MRobin</a>.</p>
+  </footer>
+</div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Cover Electricidad</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+    <link href={% static 'core/css/bootstrap.min.css' %} rel="stylesheet">
+    <link href={% static 'core/css/signin.css' %} rel="stylesheet">
+
+  <link href={% static 'core/css/custom.css' %} rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin w-100 m-auto">
+  <form action="" method="post">
+    {% csrf_token %}
+    <img class="mb-4" src={% static 'core/images/bootstrap-logo.svg' %} alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" name="username" id="floatingInput" placeholder="Nombre de Usuario">
+      <label for="floatingInput">Nombre de Usuario</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Contraseña">
+      <label for="floatingPassword">Contraseña</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesión</button>
+    <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+  </form>
+</main>
+
+
+    
+  </body>
+</html>

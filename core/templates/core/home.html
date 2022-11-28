@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block content %}
+  <main class="px-3">
+    <h1>Cover Electricidad</h1>
+
+    {% if request.user.is_authenticated %}
+
+      <p class="lead">{% if request.user.is_authenticated %}Bienvenido {{ user.username | upper }}, {% endif %}. Todos los materiales eléctricos para sus instalaciones, puede encontrarlos en nuestra tienda. Por ser un nuevo usuario, tendrá un 20% de descuento en su primer compra online !!!</p>
+
+    {% else %}
+
+      <p class="lead">Nuestra empresa se especializa en la venta de materiales eléctricos a los especialistas del rubro. Todos los productos necesarios cuentan con una garantía extendida de COVER ELECTRICIDAD, lo que le da la tranquilidad que necesita a la hora de realizar un buen trabajo.</p>
+
+    {% endif %}
+
+    <p class="lead">
+      <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Acerca de Nosotros...</a>
+    </p>
+  </main>
+{% endblock %}
